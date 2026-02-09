@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>Refah QR Card</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+<style>
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03));
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  max-width: 320px;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#qrcode {
+  background: white;
+  padding: 12px;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+.footer {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>🏦 Bank Refah QR</h2>
+  <div id="qrcode"></div>
+  <div class="footer">عباس عساکره</div>
+</div>
+
+<script>
+const data = `
+Bank Refah
+Card: 5894 6311 6071 7518
+IBAN: IR57013010000000320909062
+Name: عباس عساکره
+`;
+
+new QRCode(document.getElementById("qrcode"), {
+  text: data,
+  width: 220,
+  height: 220,
+  colorDark: "#111827",
+  colorLight: "#ffffff",
+  correctLevel: QRCode.CorrectLevel.H
+});
+</script>
+
+</body>
+</html>
