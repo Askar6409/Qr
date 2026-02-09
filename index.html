@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
-<title>Card Info QR</title>
+<title>Location QR</title>
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 <style>
 body {
@@ -25,18 +25,21 @@ body {
   text-align: center;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
   border: 1px solid rgba(255,255,255,0.2);
+  max-width: 360px;
 }
 
 #qrcode {
   background: white;
-  padding: 14px;
-  border-radius: 16px;
+  padding: 16px;
+  border-radius: 18px;
   display: inline-block;
 }
 
-p {
+.info {
   margin-top: 12px;
-  opacity: 0.7;
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.85;
 }
 </style>
 </head>
@@ -44,13 +47,16 @@ p {
 <body>
 
 <div class="card">
-  <h2>🏦 Card Info QR</h2>
+  <h2>📍 موقعیت و تماس</h2>
   <div id="qrcode"></div>
-  <p>عباس عساکره</p>
+  <div class="info">
+    <div>📞 شماره تماس: 09166336409</div>
+    <div>🌐 لینک مکان: <a href="https://maps.app.goo.gl/fu8bjK1zeW3jBmwL9" target="_blank" style="color:#aaccff;">باز کردن نقشه</a></div>
+  </div>
 </div>
 
 <script>
-const url = "https://askar6409.github.io/Card-info/"; // لینک کارت
+const url = "https://maps.app.goo.gl/fu8bjK1zeW3jBmwL9\nMobile: 09166336409";
 
 new QRCode(document.getElementById("qrcode"), {
   text: url,
