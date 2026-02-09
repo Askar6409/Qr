@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
-<title>Location QR</title>
+<title>Scan QR</title>
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 <style>
 body {
@@ -25,38 +25,24 @@ body {
   text-align: center;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
   border: 1px solid rgba(255,255,255,0.2);
-  max-width: 360px;
 }
 
 #qrcode {
   background: white;
-  padding: 16px;
-  border-radius: 18px;
-  display: inline-block;
-}
-
-.info {
-  margin-top: 12px;
-  font-size: 16px;
-  line-height: 1.8;
-  opacity: 0.85;
+  padding: 14px;
+  border-radius: 16px;
 }
 </style>
 </head>
 
 <body>
-
 <div class="card">
-  <h2>📍 موقعیت و تماس</h2>
+  <h2>📲 اسکن برای اطلاعات تماس</h2>
   <div id="qrcode"></div>
-  <div class="info">
-    <div>📞 شماره تماس: 09166336409</div>
-    <div>🌐 لینک مکان: <a href="https://maps.app.goo.gl/fu8bjK1zeW3jBmwL9" target="_blank" style="color:#aaccff;">باز کردن نقشه</a></div>
-  </div>
 </div>
 
 <script>
-const url = "https://maps.app.goo.gl/fu8bjK1zeW3jBmwL9\nMobile: 09166336409";
+const url = "./info.html"; // بعد از اسکن میره اینجا
 
 new QRCode(document.getElementById("qrcode"), {
   text: url,
