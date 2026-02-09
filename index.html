@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
-<title>Refah QR</title>
+<title>Card Info QR</title>
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 <style>
 body {
@@ -44,13 +44,13 @@ p {
 <body>
 
 <div class="card">
-  <h2>🏦 اسکن برای نمایش اطلاعات</h2>
+  <h2>🏦 Card Info QR</h2>
   <div id="qrcode"></div>
   <p>عباس عساکره</p>
 </div>
 
 <script>
-const url = "./info.html"; // لینک مستقیم به صفحه اطلاعات
+const url = "https://askar6409.github.io/Card-info/"; // لینک کارت
 
 new QRCode(document.getElementById("qrcode"), {
   text: url,
