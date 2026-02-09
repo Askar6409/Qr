@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
-<title>Refah QR Card</title>
+<title>Refah QR</title>
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 <style>
 body {
@@ -17,33 +17,19 @@ body {
 }
 
 .card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03));
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(18px);
   border-radius: 22px;
   padding: 28px;
   text-align: center;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
   border: 1px solid rgba(255,255,255,0.2);
-  max-width: 320px;
-}
-
-h2 {
-  margin-bottom: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 #qrcode {
   background: white;
-  padding: 12px;
+  padding: 14px;
   border-radius: 16px;
-  display: inline-block;
-}
-
-.footer {
-  margin-top: 14px;
-  font-size: 13px;
-  opacity: 0.7;
 }
 </style>
 </head>
@@ -51,21 +37,16 @@ h2 {
 <body>
 
 <div class="card">
-  <h2>🏦 Bank Refah QR</h2>
+  <h2>🏦 Scan to Pay</h2>
   <div id="qrcode"></div>
-  <div class="footer">عباس عساکره</div>
+  <p style="opacity:0.7; margin-top:10px;">Abbas Asakere</p>
 </div>
 
 <script>
-const data = `
-Bank Refah
-Card: 5894 6311 6071 7518
-IBAN: IR57013010000000320909062
-Name: عباس عساکره
-`;
+const url = "https://YOUR-SITE.com/info.html"; // لینک صفحه اطلاعات
 
 new QRCode(document.getElementById("qrcode"), {
-  text: data,
+  text: url,
   width: 220,
   height: 220,
   colorDark: "#111827",
